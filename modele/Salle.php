@@ -10,7 +10,7 @@ class Salle
 
     public function __construct($nSalle, $nomSalle, $nbPoste, $indIP)
     {
-        $this->id = $id;
+        $this->nSalle = $nSalle;
         $this->nomSalle = $nomSalle;
         $this->nbPoste = $nbPoste;
         $this->indIP = $indIP;

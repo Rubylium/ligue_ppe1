@@ -4,13 +4,12 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 
-require_once("$racine/modele/BateauManager.php");
-require_once("$racine/modele/CategorieManager.php");
+require_once("$racine/modele/SalleManager.php");
 
 
 
 $salleManager = new SalleManager(); // Création d'un objet
-$salle = $salleManager->getList();
+$salles = $salleManager->getList();
 
 $titre = "Affichage de toute les salles";
 // appel du script de vue qui permet de gerer l'affichage des donnees

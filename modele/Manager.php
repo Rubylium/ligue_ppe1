@@ -7,7 +7,7 @@ class Manager
     {
         $login = "root";
         $mdp = "";
-        $bd = "cbd";
+        $bd = "parc";
         $serveur = "localhost";
 
         try
@@ -34,5 +34,3 @@ class Manager
     }
     
 }
-
-?>

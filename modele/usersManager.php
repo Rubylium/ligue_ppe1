@@ -19,17 +19,17 @@ class usersManager extends Manager
     }
 
 
-    public function DoesUserExist($login, $password) //instancie une collection d'objets Salle
+    public function DoesUserExist($email, $password) //instancie une collection d'objets Salle
     {
         $exist = false;
-        $q = $this->getPDO()->query('SELECT id, level, name, password, email FROM mrbs_users WHERE name = "' + $login + '" AND password = "' + $password + '"');
+        $q = $this->getPDO()->query('SELECT id, level, name, password, email FROM mrbs_users WHERE email = "' + $email + '" AND password = "' + $password + '"');
 
         $users = [];
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
             $users[$donnees['name']] = new users($donnees['id'], $donnees['level'], $donnees['name'], $donnees['password'], $donnees['email']);
         }
 
-        if ($users[$login] != null) {
+        if ($users[$email] != null) {
             $exist = true;
         }
 

@@ -18,7 +18,7 @@
 
 <body>
 	<div id="logreg-forms">
-		<form class="form-signin">
+		<form action="controleur/login.php" method="post" class="form-signin">
 			<h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
 
 			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">

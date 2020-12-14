@@ -5,6 +5,8 @@ function controleurPrincipal($action)
     $lesActions["defaut"] = "accueil.php";
     $lesActions["accueil"] = "accueil.php";
     $lesActions["salles"] = "afficheSalle.php";
+    $lesActions["acceuilLogin"] = "accueilLogin.php";
+    $lesActions["login"] = "login.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

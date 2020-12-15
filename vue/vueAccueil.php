@@ -17,12 +17,13 @@
 </head>
 
 <body>
+	<h1> <?= $titre ?> </h1>
 	<div id="logreg-forms">
-		<form action="controleur/login.php" method="post" class="form-signin">
+		<form action="?action=login" method="post" class="form-signin">
 			<h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
 
-			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+			<input type="email" name="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+			<input type="password" name="inputPassword" class="form-control" placeholder="Password" required="">
 
 			<button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
 			<hr>

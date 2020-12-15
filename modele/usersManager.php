@@ -1,7 +1,7 @@
 <?php
 
 require_once("modele/Manager.php");
-require_once("modele/Salle.php");
+require_once("modele/users.php");
 
 class usersManager extends Manager
 {
@@ -22,14 +22,14 @@ class usersManager extends Manager
     public function DoesUserExist($email, $password) //instancie une collection d'objets Salle
     {
         $exist = false;
-        $q = $this->getPDO()->query('SELECT id, level, name, password, email FROM mrbs_users WHERE email = "' + $email + '" AND password = "' + $password + '"');
+        $q = $this->getPDO()->query('SELECT id, level, name, password, email FROM mrbs_users WHERE email = "' . $email . '" AND password = "' . $password . '"');
 
         $users = [];
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
             $users[$donnees['name']] = new users($donnees['id'], $donnees['level'], $donnees['name'], $donnees['password'], $donnees['email']);
         }
 
-        if ($users[$email] != null) {
+        if (count($users) != 0) {
             $exist = true;
         }
 

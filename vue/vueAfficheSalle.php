@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-var_dump($_SESSION["level"]);
-var_dump($_SESSION["connected"] != null && $_SESSION["connected"] == true);
-var_dump($poste);
+
 ?>
 <h1><?= $titre ?></h1>
 
@@ -30,13 +28,15 @@ if ($_SESSION["connected"] != null && $_SESSION["connected"] == true) {
 				</ul>
 				
 				<div class="card-body">
-					liste des postes:
+					liste des postes installés:
 					<?php
 					foreach ($poste as $v) {
+						if ($salle->getnSalle() == $v->GetnSalle()) {
 					?>
 						<li> <?= $v->GetnomPoste() ?> (<?= $v->GetnPoste() ?>)</li>
 
 					<?php
+						}
 					}
 					?>
 				</div>

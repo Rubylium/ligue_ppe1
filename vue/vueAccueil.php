@@ -20,6 +20,7 @@
 
 <body>
 
+
     <?php
 	session_start();
 	if ($_SESSION["connected"] == null && $_SESSION["connected"] == false) {

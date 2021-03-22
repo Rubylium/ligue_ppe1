@@ -11,15 +11,15 @@ class Poste
     private $nbLog;
 
 
-    public function __construct($nPoste, $nomPoste, $indIP, $ad, $typePoste, $nSalle, $nbLog)
+    public function __construct($poste, $nomPoste, $indIP, $ad, $typePoste, $nSalle, $nbLog)
     {
-        $this->$nPoste = $nPoste;
-        $this->$nomPoste = $nomPoste;
-        $this->$indIP = $indIP;
-        $this->$ad = $ad;
-        $this->$typePoste = $typePoste;
-        $this->$nSalle = $nSalle;
-        $this->$nbLog = $nbLog;
+        $this->nPoste = $poste;
+        $this->nomPoste = $nomPoste;
+        $this->indIP = $indIP;
+        $this->ad = $ad;
+        $this->typePoste = $typePoste;
+        $this->nSalle = $nSalle;
+        $this->nbLog = $nbLog;
     }
 
 

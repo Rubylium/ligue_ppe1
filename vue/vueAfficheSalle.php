@@ -2,7 +2,7 @@
 
 session_start();
 var_dump($_SESSION["level"]);
-var_dump($_SESSION["connected"] != null && $_SESSION["connected"] == true)
+var_dump($_SESSION["connected"] != null && $_SESSION["connected"] == true);
 var_dump($poste);
 ?>
 <h1><?= $titre ?></h1>

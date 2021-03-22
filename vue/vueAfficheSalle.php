@@ -1,16 +1,21 @@
 <?php
-//var_dump($bateaux);
+
+session_start();
+var_dump($_SESSION["level"]);
+var_dump($_SESSION["connected"] != null && $_SESSION["connected"] == true)
+var_dump($poste);
 ?>
 <h1><?= $titre ?></h1>
 
 <?php
 
-foreach ($salles as $salle) {
+if ($_SESSION["connected"] != null && $_SESSION["connected"] == true) {
+	foreach ($salles as $salle) {
 ?>
-	<div class="card" style="width: 18rem;">
-		<div class="card-body">
-			<h5 class="card-title"><?= $salle->getroom_name() ?></h5>
-			<p class="card-text">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title"><?= $salle->getroom_name() ?></h5>
+				<p class="card-text">
 				<ul>
 					<li>Numéro: <?= $salle->getnSalle() ?></li>
 					<li>Nombre de poste: <?= $salle->getnbPoste() ?></li>
@@ -18,15 +23,33 @@ foreach ($salles as $salle) {
 					<li>Capacité: <?= $salle->getcapacity() ?></li>
 					<li>Area name: <?= $areas[$salle->getarea_id()]->getarea_name() ?></li>
 				</ul>
+				</p>
 
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">Description: <?= $salle->getdescription() ?></li>
 				</ul>
+				
+				<div class="card-body">
+					liste des postes:
+					<?php
+					foreach ($poste as $v) {
+					?>
+						<li> <?= $v->GetnomPoste() ?> (<?= $v->GetnPoste() ?>)</li>
 
-			</p>
+					<?php
+					}
+					?>
+				</div>
+
+				</p>
+			</div>
 		</div>
-	</div>
 
+	<?php
+	}
+} else {
+	?>
+	Non connecté
 <?php
 }
 ?>

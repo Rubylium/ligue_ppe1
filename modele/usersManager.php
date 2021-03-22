@@ -25,12 +25,19 @@ class usersManager extends Manager
         $q = $this->getPDO()->query('SELECT id, level, name, password, email FROM mrbs_users WHERE email = "' . $email . '" AND password = "' . $password . '"');
 
         $users = [];
+        $level = 0;
         while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
             $users[$donnees['name']] = new users($donnees['id'], $donnees['level'], $donnees['name'], $donnees['password'], $donnees['email']);
+            $level = $donnees['level'];
         }
 
         if (count($users) != 0) {
             $exist = true;
+            session_start();
+            $_SESSION["connected"] = true;
+            $_SESSION["level"] = $level;
+        } else {
+            $_SESSION["connected"] = false;
         }
 
         return $exist;

@@ -7,7 +7,7 @@ class Manager
     {
         $login = "root";
         $mdp = "";
-        $bd = "parc";
+        $bd = "parcinfo";
         $serveur = "localhost";
 
         try

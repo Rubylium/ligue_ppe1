@@ -14,6 +14,9 @@
       <li class="nav-item">
         <a class="nav-link" href="./?action=ajout">Ajouter un poste</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./?action=modifier">Modifier un poste</a>
+      </li>
     </ul>
   </div>
 </nav>

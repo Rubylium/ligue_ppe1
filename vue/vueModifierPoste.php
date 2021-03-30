@@ -25,8 +25,9 @@ if ($_SESSION["connected"] != null && $_SESSION["connected"] == true) {
         <tbody>
 
             <?php
+            $_SESSION["POSTE"] = [];
             foreach ($poste as $v) {
-
+                
             ?>
                 <tr>
                     <td> <?= $v->GetnPoste() ?> </td>
@@ -37,9 +38,12 @@ if ($_SESSION["connected"] != null && $_SESSION["connected"] == true) {
                     <td> <?= $v->GetnSalle() ?> </td>
                     <td> <?= $v->GetnbLog() ?> </td>
                     <td>
-                        <form action="?action=modifierSub" method="get" class="form-signin">
-                            <?php $_SESSION["POSTE"][$v->GetnPoste()] = $v ?>
-                            test: super
+                        <form action="?action=modifierSub" method="POST" class="form-signin">
+                            <?php 
+                                $_SESSION["POSTE"][$v->GetnPoste()] = $v ;
+                                $id = $v->GetnPoste();
+                            ?>
+                            <input id="id" name="id" type="hidden" value=<?= $id ?> >
                             <button type="submit" class="btn btn-primary btn-sm">modifier</button>
                         </form>
                     </td>

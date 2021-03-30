@@ -10,6 +10,8 @@ function controleurPrincipal($action)
     $lesActions["session"] = "session.php";
     $lesActions["ajout"] = "ajoutPoste.php";
     $lesActions["ajoutValide"] = "ajoutPosteValide.php";
+    $lesActions["modifier"] = "modifierPoste.php";
+    $lesActions["modifierSub"] = "modifierPosteSub.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

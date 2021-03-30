@@ -8,8 +8,10 @@ require_once("$racine/modele/PosteManager.php");
 
 
 session_start();
-var_dump($_SESSION["POSTE"]);
+var_dump($_POST["id"]);
+
 $titre = "Modifier un poste";
+$id = $_POST["id"];
 // appel du script de vue qui permet de gerer l'affichage des donnees
 include "$racine/vue/header.php";
 include "$racine/vue/vueModifierPosteSub.php";

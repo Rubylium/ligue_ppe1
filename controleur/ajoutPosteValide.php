@@ -9,9 +9,7 @@ require_once("$racine/modele/InfoManager.php");
 
 
 $infoManager = new InfoManager();
-$types = $infoManager->GetAllType();
-$ips = $infoManager->GetAllIp();
-$salle = $infoManager->GetAllSalle();
+
 $titre = "Ajouter un poste <br> Poste ajouté !";
 
 

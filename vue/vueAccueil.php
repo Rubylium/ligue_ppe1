@@ -40,8 +40,6 @@
             <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
             <hr>
         </form>
-
-
     </div>
     <?php
 	} else {

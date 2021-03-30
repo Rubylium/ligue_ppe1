@@ -11,6 +11,9 @@
       <li class="nav-item">
         <a class="nav-link" href="./?action=salles">Liste des salles</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./?action=ajoutSalle">Ajouter un poste</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -8,47 +8,35 @@ session_start();
 <?php
 
 if ($_SESSION["connected"] != null || $_SESSION["connected"] == true) {
-	foreach ($salles as $salle) {
 ?>
-		<div class="card" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title"><?= $salle->getroom_name() ?></h5>
-				<p class="card-text">
-				<ul>
-					<li>Numéro: <?= $salle->getnSalle() ?></li>
-					<li>Nombre de poste: <?= $salle->getnbPoste() ?></li>
-					<li>Ind IP: <?= $salle->getindIP() ?></li>
-					<li>Capacité: <?= $salle->getcapacity() ?></li>
-					<li>Area name: <?= $areas[$salle->getarea_id()]->getarea_name() ?></li>
-				</ul>
-				</p>
 
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Description: <?= $salle->getdescription() ?></li>
-				</ul>
-				
-				<div class="card-body">
-					liste des postes installés:
-					<?php
-					foreach ($poste as $v) {
-						if ($salle->getnSalle() == $v->GetnSalle()) {
-					?>
-						<li> <?= $v->GetnomPoste() ?> (<?= $v->GetnPoste() ?>)</li>
+	<div id="logreg-forms">
+		<form action="?action=login" method="post" class="form-signin">
+			<h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Ajout de poste</h1>
 
-					<?php
-						}
-					}
-					?>
-				</div>
+			<input type="num" name="inputNum" class="form-control" placeholder="Numero de poste" required="" autofocus="">
+			<input type="nom" name="inputNom" class="form-control" placeholder="Nom de poste" required="">
 
-				</p>
-			</div>
-		</div>
+			<select type="indIP" name="inputindIP" class="form-control">
+				<option>IP 1</option>
+			</select>
 
-	<?php
-	}
+			<input type="ad" name="inputAd" class="form-control" placeholder="ad" required="">
+
+			<select type="type" name="inputType" class="form-control">
+				<option>Type 1</option>
+			</select>
+
+			<input type="nSalle" name="inputnSalle" class="form-control" placeholder="Numero salle" required="">
+
+			<button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Ajouter</button>
+			<hr>
+		</form>
+	</div>
+
+<?php
 } else {
-	?>
+?>
 	Non connecté
 <?php
 }

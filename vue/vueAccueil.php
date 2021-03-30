@@ -23,8 +23,10 @@
 
     <?php
 	session_start();
-	if ($_SESSION["connected"] == null && $_SESSION["connected"] == false) {
-
+    $_SESSION["connected"] = false;
+    //var_dump($_SESSION["connected"]);
+	if (!isset($_SESSION["connected"]) || $_SESSION["connected"] === false) {
+    
 	?>
     <h1> <?= $titre ?> </h1>
     <div id="logreg-forms">

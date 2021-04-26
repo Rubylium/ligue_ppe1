@@ -12,6 +12,7 @@ function controleurPrincipal($action)
     $lesActions["ajoutValide"] = "ajoutPosteValide.php";
     $lesActions["modifier"] = "modifierPoste.php";
     $lesActions["modifierSub"] = "modifierPosteSub.php";
+    $lesActions["modifierSubValide"] = "modifierPosteSubValide.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

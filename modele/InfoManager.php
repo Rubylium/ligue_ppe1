@@ -48,4 +48,12 @@ class InfoManager extends Manager
 
         $this->getPDO()->query('INSERT INTO poste (nPoste, nomPoste, indIP, ad, typePoste, nSalle, nbLog) VALUES ("' . $num .'", "' . $name . '", "' . $ip . '", "' . $ad .'", "' . $type .'", "' . $numeroSalle . '", "' . $log . '")');
     }
+
+
+    public function ChangePoste($num, $name, $ip, $ad, $type, $numeroSalle, $log) {
+        var_dump($num, $name, $ip, $ad, $type, $numeroSalle, $log);
+
+
+        $this-getPDO()->query('UPDATE poste SET nPoste = "' . $num . '", nomPoste = "' . $name . '", indIP = "'. $ip .'", ad "'. $ad .'", typePoste = "'. $type .'", nSalle = "'. $numeroSalle .'", nbLog = "'. $log .'" WHERE nPoste = "'. $num .'"');
+    }
 }

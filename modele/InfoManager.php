@@ -53,7 +53,6 @@ class InfoManager extends Manager
     public function ChangePoste($num, $name, $ip, $ad, $type, $numeroSalle, $log) {
         var_dump($num, $name, $ip, $ad, $type, $numeroSalle, $log);
 
-
-        $this-getPDO()->query('UPDATE poste SET nPoste = "' . $num . '", nomPoste = "' . $name . '", indIP = "'. $ip .'", ad "'. $ad .'", typePoste = "'. $type .'", nSalle = "'. $numeroSalle .'", nbLog = "'. $log .'" WHERE nPoste = "'. $num .'"');
+        $this-getPDO()->query('UPDATE poste SET nomPoste = "' . $name . '", indIP = "'. $ip .'", ad "'. $ad .'", typePoste = "'. $type .'", nSalle = "'. $numeroSalle .'", nbLog = "'. $log .'" WHERE nPoste = "'. $num .'"');
     }
 }

@@ -7,7 +7,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 require_once("$racine/modele/PosteManager.php");
 
 
-
+session_start();
 $posteManager = new PosteManager();
 $poste = $posteManager->getList();
 $titre = "Modifier un poste";

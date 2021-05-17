@@ -1,8 +1,4 @@
-<?php
 
-session_start();
-
-?>
 <h1><?= $titre ?></h1>
 
 <?php

@@ -4,6 +4,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 
+session_start();
 require_once("$racine/modele/InfoManager.php");
 
 

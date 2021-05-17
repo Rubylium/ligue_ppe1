@@ -2,7 +2,7 @@
 if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine="..";
 }
-
+session_start();
 
 $titre = "";
 include "$racine/vue/header.php";

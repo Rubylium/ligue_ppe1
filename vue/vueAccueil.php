@@ -22,7 +22,6 @@
 
 
     <?php
-	session_start();
     $_SESSION["connected"] = false;
     //var_dump($_SESSION["connected"]);
 	if (!isset($_SESSION["connected"]) || $_SESSION["connected"] === false) {

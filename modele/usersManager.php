@@ -33,7 +33,7 @@ class usersManager extends Manager
 
         if (count($users) != 0) {
             $exist = true;
-            session_start();
+            //session_start();
             $_SESSION["connected"] = true;
             $_SESSION["level"] = $level;
         } else {

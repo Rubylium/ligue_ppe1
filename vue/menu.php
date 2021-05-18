@@ -1,5 +1,5 @@
 ﻿<?php
-  var_dump($_SESSION["connected"]);
+  //var_dump($_SESSION["connected"]);
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="./?action=accueil">Gestion parcinfo</a>

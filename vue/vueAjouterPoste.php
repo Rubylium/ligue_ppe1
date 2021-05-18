@@ -3,7 +3,8 @@
 
 <?php
 
-if ($_SESSION["connected"] != null || $_SESSION["connected"] == true) {
+if (isset($_SESSION) && $_SESSION["connected"] != null || $_SESSION["connected"] == true) {
+	if ($_SESSION["level"] > 0) { 
 ?>
 
 	<div id="logreg-forms">
@@ -54,6 +55,12 @@ if ($_SESSION["connected"] != null || $_SESSION["connected"] == true) {
 	</div>
 
 <?php
+
+	} else {
+	?>
+		Pas la permission
+	<?php
+	}
 } else {
 ?>
 	Non connecté

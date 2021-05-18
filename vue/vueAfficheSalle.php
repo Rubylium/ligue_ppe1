@@ -3,7 +3,7 @@
 
 <?php
 
-if ($_SESSION["connected"] != null && $_SESSION["connected"] == true) {
+if (isset($_SESSION) && $_SESSION["connected"] != null && $_SESSION["connected"] == true) {
 	foreach ($salles as $salle) {
 ?>
 		<div class="card" style="width: 18rem;">

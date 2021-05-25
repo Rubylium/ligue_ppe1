@@ -11,7 +11,7 @@ function connexionPDO() {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {
-        print "Erreur de connexion PDO ";
+        print "Erreur de connexion PDO (bd.inc.php)";
         die();
     }
 }

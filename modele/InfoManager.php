@@ -43,14 +43,28 @@ class InfoManager extends Manager
     }
 
 
-    public function AddNewPoste($num, $name, $ip, $ad, $type, $numeroSalle, $log) {
+    public function AddNewPoste($allposte, $num, $name, $ip, $ad, $type, $numeroSalle, $log) {
+        $found = false;
 
-        $this->getPDO()->query('INSERT INTO poste (nPoste, nomPoste, indIP, ad, typePoste, nSalle, nbLog) VALUES ("' . $num .'", "' . $name . '", "' . $ip . '", "' . $ad .'", "' . $type .'", "' . $numeroSalle . '", "' . $log . '")');
+        foreach ($allposte as $key => $v) {
+            if ($v->GetnPoste() == $num) {
+                $found = true;
+            }
+        }
+
+
+        if ($found == false) {
+            $this->getPDO()->query('INSERT INTO poste (nPoste, nomPoste, indIP, ad, typePoste, nSalle, nbLog) VALUES ("' . $num .'", "' . $name . '", "' . $ip . '", "' . $ad .'", "' . $type .'", "' . $numeroSalle . '", "' . $log . '")');
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 
     public function ChangePoste($num, $name, $ip, $ad, $type, $numeroSalle, $log) {
-        var_dump($num, $name, $ip, $ad, $type, $numeroSalle, $log);
+        //var_dump($num, $name, $ip, $ad, $type, $numeroSalle, $log);
 
         $this->getPDO()->query('UPDATE poste SET nomPoste = "' . $name . '", indIP = "'. $ip .'", ad = "'. $ad .'", typePoste = "'. $type .'", nSalle = "'. $numeroSalle .'", nbLog = "'. $log .'" WHERE nPoste = "'. $num .'"');
     }

@@ -47,7 +47,16 @@ if (isset($_SESSION) && $_SESSION["connected"] != null || $_SESSION["connected"]
 			</select>
 
 			<!-- <input type="nSalle" name="inputnSalle" class="form-control" placeholder="Numero salle" required=""> -->
-			<input type="NbLog" name="inputNbLog" class="form-control" placeholder="Nombre log (0, 1, 3)" required="">
+			<!-- <input type="NbLog" name="inputNbLog" class="form-control" placeholder="Nombre log (0, 1, 3)" required=""> -->
+			<select type="NbLog" name="inputNbLog" class="form-control">
+				<?php
+					for ($i = 0; $i <= 3; $i++) {
+					?>
+						<option><?= $i ?></option>
+					<?php
+					}
+				?>
+			</select>
 
 			<button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Ajouter</button>
 			<hr>

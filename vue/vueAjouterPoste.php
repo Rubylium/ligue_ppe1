@@ -24,7 +24,7 @@ if (isset($_SESSION) && $_SESSION["connected"] != null || $_SESSION["connected"]
 				?>
 			</select>
 
-			<input type="ad" name="inputAd" class="form-control" placeholder="ad" required="">
+			<input type="number" name="inputAd" class="form-control" placeholder="ad" required="">
 
 			<select type="type" name="inputType" class="form-control">
 				<?php

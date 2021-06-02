@@ -5,8 +5,8 @@ class Manager
 {
     protected function dbConnect()
     {
-        $login = "admin";
-        $mdp = "admin";
+        $login = "root";
+        $mdp = "";
         $bd = "parcinfo";
         $serveur = "localhost";
 
